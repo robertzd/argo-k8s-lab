@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik
+spec:
+  destination:
+    name: ''
+    namespace: 'traefik'
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://helm.traefik.io/traefik'
+    targetRevision: 19.0.3
+    chart: traefik
+    helm:
+      values: |-
+        additionalArguments:
+        logs:
+          general:
+            level: ERROR
+        ports:
+          web:
+            redirectTo: websecure
+          websecure:
+            tls:
+              enabled: true
+        ingressRoute:
+          dashboard:
+            enabled: false
+        ingressClass:
+          enabled: true
+          isDefaultClass: true
+        spec:
+          loadBalancerIP: 172.16.16.50
+  project: default
+  syncPolicy:
+    automated: null
+    syncOptions:
+      - CreateNamespace=true
