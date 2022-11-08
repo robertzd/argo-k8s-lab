@@ -168,6 +168,7 @@ spec:
               port: 9000
               scheme: HTTP
           readinessProbe:
+            initialDelaySeconds: 15
             httpGet:
               path: /
               port: 9000
