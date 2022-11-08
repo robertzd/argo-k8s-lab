@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager-clusterissuer
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: ''
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: infra/metric-server
+    repoURL: 'https://github.com/robertzd/argo-k8s-lab'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
