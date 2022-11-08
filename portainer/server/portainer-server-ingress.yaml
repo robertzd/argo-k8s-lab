@@ -162,16 +162,16 @@ spec:
             - name: tcp-edge
               containerPort: 8000
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 9000
-              scheme: HTTP
-          readinessProbe:
-            initialDelaySeconds: 15
-            httpGet:
-              path: /
-              port: 9000
-              scheme: HTTP
+#          livenessProbe:
+#            httpGet:
+#              path: /
+#              port: 9000
+#              scheme: HTTP
+#          readinessProbe:
+#            initialDelaySeconds: 15
+#            httpGet:
+#              path: /
+#              port: 9000
+#              scheme: HTTP
           resources:
             {}
