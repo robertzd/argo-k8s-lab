@@ -1,4 +1,4 @@
----ce-latest-ee-2.16.0
+---
 # Source: portainer/templates/namespace.yaml
 apiVersion: v1
 kind: Namespace
