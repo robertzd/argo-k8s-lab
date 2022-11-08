@@ -8,7 +8,7 @@ spec:
     namespace: ''
     server: 'https://kubernetes.default.svc'
   source:
-    path: infra
+    path: root\apps
     repoURL: 'https://github.com/robertzd/argo-k8s-lab'
     targetRevision: HEAD
   project: default
