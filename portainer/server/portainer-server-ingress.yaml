@@ -1,4 +1,4 @@
----
+---ce-latest-ee-2.16.0
 # Source: portainer/templates/namespace.yaml
 apiVersion: v1
 kind: Namespace
@@ -14,7 +14,7 @@ metadata:
   labels:
     app.kubernetes.io/name: portainer
     app.kubernetes.io/instance: portainer
-    app.kubernetes.io/version: "ce-latest-ee-2.12.1"
+    app.kubernetes.io/version: "ce-latest-ee-2.16.0"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -27,7 +27,7 @@ metadata:
     io.portainer.kubernetes.application.stack: portainer
     app.kubernetes.io/name: portainer
     app.kubernetes.io/instance: portainer
-    app.kubernetes.io/version: "ce-latest-ee-2.12.1"
+    app.kubernetes.io/version: "ce-latest-ee-2.16.0"
 spec:
   accessModes:
     - "ReadWriteOnce"
@@ -43,7 +43,7 @@ metadata:
   labels:
     app.kubernetes.io/name: portainer
     app.kubernetes.io/instance: portainer
-    app.kubernetes.io/version: "ce-latest-ee-2.12.1"
+    app.kubernetes.io/version: "ce-latest-ee-2.16.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -63,7 +63,7 @@ metadata:
     io.portainer.kubernetes.application.stack: portainer
     app.kubernetes.io/name: portainer
     app.kubernetes.io/instance: portainer
-    app.kubernetes.io/version: "ce-latest-ee-2.12.1"
+    app.kubernetes.io/version: "ce-latest-ee-2.16.0"
 spec:
   type: ClusterIP
   ports:
@@ -122,7 +122,7 @@ metadata:
     io.portainer.kubernetes.application.stack: portainer
     app.kubernetes.io/name: portainer
     app.kubernetes.io/instance: portainer
-    app.kubernetes.io/version: "ce-latest-ee-2.12.1"
+    app.kubernetes.io/version: "ce-latest-ee-2.16.0"
 spec:
   replicas: 1
   strategy:
