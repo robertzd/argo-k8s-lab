@@ -4,18 +4,36 @@ metadata:
   name: traefik
 spec:
   destination:
-    namespace: traefik
-    server: https://kubernetes.default.svc
-  project: default
+    name: ''
+    namespace: 'traefik'
+    server: 'https://kubernetes.default.svc'
   source:
+    path: ''
+    repoURL: 'https://helm.traefik.io/traefik'
+    targetRevision: 19.0.3
     chart: traefik
     helm:
-      parameters:
-        - name: installCRDs
-          value: "true"
-    repoURL: https://charts.jetstack.io
-    targetRevision: v1.10.0
+      values: |-
+        additionalArguments:
+        logs:
+          general:
+            level: ERROR
+        ports:
+          web:
+            redirectTo: websecure
+          websecure:
+            tls:
+              enabled: true
+        ingressRoute:
+          dashboard:
+            enabled: false
+        ingressClass:
+          enabled: true
+          isDefaultClass: true
+        spec:
+          loadBalancerIP: 172.16.16.50
+  project: default
   syncPolicy:
-    automated: {}
+    automated: null
     syncOptions:
       - CreateNamespace=true
