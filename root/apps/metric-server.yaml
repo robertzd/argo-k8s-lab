@@ -3,11 +3,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: metric-server
-  namespace: argocd
+  namespace: kube-system
 spec:
   destination:
     name: ''
-    namespace: ''
+    namespace: 'kube-system'
     server: 'https://kubernetes.default.svc'
   source:
     path: infra/metric-server
