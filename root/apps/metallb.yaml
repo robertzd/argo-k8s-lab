@@ -12,6 +12,7 @@ spec:
   source:
     path: ''
     repoURL: 'https://metallb.github.io/metallb'
+    targetRevision: ''
     chart: metallb
   project: default
   syncPolicy:
