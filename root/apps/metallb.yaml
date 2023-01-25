@@ -2,21 +2,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: metallb-config
+  name: metallb
   namespace: argocd
 spec:
   destination:
     name: ''
-    namespace: 'metallb-system'
+    namespace: metallb-system
     server: 'https://kubernetes.default.svc'
   source:
-    path: infra/metallb
-    repoURL: 'https://github.com/robertzd/argo-k8s-lab'
-    targetRevision: HEAD
+    path: ''
+    repoURL: 'https://metallb.github.io/metallb'
+    chart: metallb
   project: default
   syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
