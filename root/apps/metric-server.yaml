@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: metric-server
-  namespace: kube-system
+  namespace: argocd
 spec:
   destination:
     name: ''
