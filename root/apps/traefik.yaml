@@ -32,8 +32,10 @@ spec:
         ingressClass:
           enabled: true
           isDefaultClass: true
-        spec:
-          loadBalancerIP: 172.16.16.50
+        service:
+          type: LoadBalancer
+          spec:
+              loadBalancerIP: 172.16.16.50
   project: default
   syncPolicy:
     syncOptions:
