@@ -29,6 +29,7 @@ metadata:
   namespace: portainer
 spec:
   type: LoadBalancer
+  loadBalancerIP: 172.16.16.51
   selector:
     app: portainer-agent
   ports:
