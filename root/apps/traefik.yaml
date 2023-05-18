@@ -12,14 +12,24 @@ spec:
   source:
     path: ''
     repoURL: 'https://helm.traefik.io/traefik'
-    targetRevision: 21.2.0
+    targetRevision: 23.0.1
     chart: traefik
     helm:
       values: |-
         additionalArguments:
+        deployemnt:
+          replicas: 3
+        resources:
+          requests:
+            cpu: 100m
+            memory: 50Mi
+          limits:
+            memory: 150Mi
         logs:
           general:
             level: ERROR
+          access:
+            enabled: true
         ports:
           web:
             redirectTo: websecure
