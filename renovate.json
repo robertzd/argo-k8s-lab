@@ -3,9 +3,9 @@
   "extends": [
     "config:base"
   ]
+}  
 {
   "argocd": {
     "fileMatch": ["\\.yaml$"]
   }
-}  
 }
