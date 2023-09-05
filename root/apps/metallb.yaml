@@ -23,7 +23,7 @@ spec:
   source:
     path: ''
     repoURL: 'https://metallb.github.io/metallb'
-    targetRevision: '0.13.10'
+    targetRevision: '0.13.11'
     chart: metallb
   project: default
   syncPolicy:
